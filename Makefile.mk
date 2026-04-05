@@ -2,19 +2,20 @@ ifneq ($(RESDEV),1)
 include $(DEVKITPRO)/libnx/switch_rules
 endif
 
-# 1. The name of your app
+# The name of your app
 TARGET := R2D2_Controller
 
-# 2. The temporary folder where it builds (keep this as 'build')
+# Temporary build folder
 BUILD := build
 
-# 3. WHERE YOUR CODE LIVES (Change this to just 'source')
+# This is the fix: It tells the server to look in the folder named 'source'
+# located in the same place as this Makefile.
 SOURCES := source
 
-# 4. Extra folders (usually stay as they are)
+# Standard folders
 INCLUDES := include
 DATA := data
-ICON := $(TARGET).jpg
+ICON := icon.jpg
 
-# This part tells devkitPro how to put it all together
+# The 'magic' line that does the work
 include $(DEVKITPRO)/libnx/switch_rules
